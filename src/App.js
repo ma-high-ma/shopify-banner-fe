@@ -23,3 +23,6 @@ function App() {
 }
 
 export default App;
+alert("HEyy inside App.js")
+
+// const x = document.body
