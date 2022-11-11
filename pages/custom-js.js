@@ -24,8 +24,14 @@ fetchData()
 if (abc['status'] === 'enabled') {
   const pages = abc['pages']
   if (pages[0] === 'all' || pages.includes(path)){
-    const banner_div = document.createElement('div')
-    banner_div.innerHTML = 'Sale is LIVE'
+
+    let banner_div = document.getElementsByClassName("announcement-bar")
+    if (banner_div.length === 0) {
+      banner_div = document.createElement('div')
+    }
+
+    banner_div = banner_div[0]
+    banner_div.innerHTML = abc['text']
     banner_div.style.color = abc['style']['text_color']
     banner_div.style.textAlign = abc['style']['text_align']
     banner_div.style.background = abc['style']['background_color']
@@ -35,3 +41,7 @@ if (abc['status'] === 'enabled') {
     }
   }
 });
+
+
+
+
